@@ -1,0 +1,50 @@
+body {
+  background: #f2f2f2;
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Amplop */
+.amplop {
+  width: 260px;
+  height: 160px;
+  background: #bfa27a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Surat */
+.undangan {
+  width: 420px;
+  padding: 40px 30px;
+  background: #fffdf8;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.isi {
+  line-height: 1.8;
+  min-height: 120px;
+  margin-bottom: 30px;
+}
+
+.ttd span {
+  font-weight: bold;
+}
