@@ -9,25 +9,108 @@ body {
 
 /* Amplop */
 .amplop {
-  width: 260px;
-  height: 160px;
-  background: #bfa27a;
-  color: white;
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  background: #c00000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Flap amplop (segitiga atas) */
+.amplop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 115px solid #c00000;
+  transform-origin: top;
+  transition: transform 0.5s ease;
+}
+
+/* Efek saat amplop dibuka */
+.amplop.open::before {
+  transform: rotateX(180deg);
+}
+
+/* Tombol Klik */
+.klik-button {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background: #e56f00;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.klik-button:hover {
+  background: #ff8c00;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.klik-button span {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+/* Isi amplop (tersembunyi saat tertutup) */
+.amplop-content {
+  position: absolute;
+  width: 280px;
+  height: 160px;
+  background: white;
+  top: 10px;
+  left: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+.amplop.open .amplop-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Teks tambahan */
+.additional-text {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
 
 /* Surat */
 .undangan {
   width: 420px;
   padding: 40px 30px;
-  background: #fffdf8;
+  background-image: url('bg-paper.jpg');
+  object-fit: cover ;
   text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: inset;
+  color: white;
 }
 
 .hidden {
@@ -37,14 +120,17 @@ body {
 h1 {
   letter-spacing: 3px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .isi {
   line-height: 1.8;
   min-height: 120px;
   margin-bottom: 30px;
+  color: white;
 }
 
 .ttd span {
   font-weight: bold;
+  color: white;
 }
